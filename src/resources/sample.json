@@ -1,0 +1,85 @@
+{
+  "robots": [
+    {
+      "id": "r1",
+      "start_location": "lr1",
+      "current_location": "lr1",
+      "speed": 0.25,
+      "battery": {
+        "capacity": 100.0,
+        "per_meter": 0.25,
+        "per_pick": 0.5,
+        "per_turn": 0.05,
+        "per_minute": 0.05
+      }
+    },
+    {
+      "id": "r2",
+      "start_location": "lr2",
+      "current_location": "lr2",
+      "speed": 0.3,
+      "battery": {
+        "capacity": 100.0,
+        "per_meter": 0.27,
+        "per_pick": 0.5,
+        "per_turn": 0.05,
+        "per_minute": 0.07
+      }
+    }
+  ],
+  "ailes": [],
+  "corners": [
+    {
+      "aisles": [
+        "a1",
+        "a2"
+      ],
+      "coords": [
+        0,
+        0
+      ],
+      "capacity": 5,
+      "location": "lc1",
+      "occupants": []
+    },
+    {
+      "aisles": [
+        "a2",
+        "a3"
+      ],
+      "capacity": 5,
+      "coords": [
+        0,
+        3
+      ],
+      "location": "lc2",
+      "occupants": []
+    },
+    {
+      "aisles": [
+        "a3",
+        "a4"
+      ],
+      "capacity": 5,
+      "coords": [
+        3,
+        3
+      ],
+      "location": "lc3",
+      "occupants": []
+    },
+    {
+      "aisles": [
+        "a4",
+        "a5"
+      ],
+      "capacity": 5,
+      "coords": [
+        3,
+        0
+      ],
+      "location": "lc4",
+      "occupants": []
+    }
+  ]
+}
