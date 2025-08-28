@@ -1,5 +1,8 @@
+use crate::reader::parser::Warehouse;
+
 mod model;
+mod reader;
 
 fn main() {
-    println!("Hello, world!");
+    let warehouse = Warehouse::from_json_file("./src/resources/sample.json");
 }

@@ -1,11 +1,29 @@
-use std::rc::Rc;
+use std::{cell::RefCell, rc::Rc};
 
 use crate::model::{battery::Battery, location::Location};
 
 pub struct Robot {
-    pub id: u8,
-    pub battery: Box<Battery>,
-    pub start_location: Rc<dyn Location>,
-    pub current_location: Rc<dyn Location>,
-    pub speed: f32,
+    battery: Box<RefCell<Battery>>,
+    current_location: Rc<RefCell<dyn Location>>,
+    id: String,
+    speed: f32,
+    start_location: Rc<RefCell<dyn Location>>,
+}
+
+impl Robot {
+    pub fn new(
+        battery: Box<RefCell<Battery>>,
+        current_location: Rc<RefCell<dyn Location>>,
+        id: String,
+        speed: f32,
+        start_location: Rc<RefCell<dyn Location>>,
+    ) -> Self {
+        Self {
+            battery,
+            current_location,
+            id,
+            speed,
+            start_location,
+        }
+    }
 }

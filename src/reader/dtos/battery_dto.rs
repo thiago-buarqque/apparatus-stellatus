@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Copy, Clone, Default, PartialEq, Deserialize, Serialize)]
-pub struct Battery {
+#[derive(Debug, Deserialize, Serialize)]
+pub struct BatteryDTO {
     pub capacity: f32,
     pub per_meter: f32,
     pub per_pick: f32,

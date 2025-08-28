@@ -103,7 +103,7 @@
         ]
       ],
       "capacity": 5,
-      "edgeType": "NORMAL",
+      "edge_type": "Normal",
       "occupants": [
         "robot1"
       ]
@@ -125,7 +125,7 @@
         ]
       ],
       "capacity": 1,
-      "edgeType": "Shelf",
+      "edge_type": "Shelf",
       "occupants": []
     },
     {
@@ -144,7 +144,7 @@
           3
         ]
       ],
-      "edgeType": "NORMAL",
+      "edge_type": "Normal",
       "occupants": [
         "robot1"
       ]
