@@ -1,9 +1,9 @@
 {
   "robots": [
     {
-      "id": "r1",
-      "start_location": "lr1",
-      "current_location": "lr1",
+      "id": "robot1",
+      "start_location": "edge1",
+      "current_location": "edge1",
       "speed": 0.25,
       "battery": {
         "capacity": 100.0,
@@ -14,9 +14,9 @@
       }
     },
     {
-      "id": "r2",
-      "start_location": "lr2",
-      "current_location": "lr2",
+      "id": "robot2",
+      "start_location": "edge2",
+      "current_location": "edge2",
       "speed": 0.3,
       "battery": {
         "capacity": 100.0,
@@ -27,59 +27,127 @@
       }
     }
   ],
-  "ailes": [],
-  "corners": [
+  "aisles": [
     {
+      "id": "ai1",
+      "capacity": 1,
+      "occupants": [],
+      "coords": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "from": "edge1",
+      "to": "edge2",
+      "parent_aisle": null,
+      "distance": 2.0
+    },
+    {
+      "id": "ai1-1",
+      "capacity": 1,
+      "occupants": [],
+      "coords": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "from": "edge1",
+      "to": "shelf1",
+      "parent_aisle": "ai1",
+      "distance": 1.0
+    },
+    {
+      "id": "ai1-2",
+      "capacity": 1,
+      "occupants": [],
+      "coords": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "from": "shelf1",
+      "to": "edge2",
+      "parent_aisle": "ai1",
+      "distance": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge1",
       "aisles": [
-        "a1",
-        "a2"
+        "ai1"
       ],
       "coords": [
-        0,
-        0
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
       ],
       "capacity": 5,
-      "location": "lc1",
+      "edgeType": "NORMAL",
+      "occupants": [
+        "robot1"
+      ]
+    },
+    {
+      "id": "shelf1",
+      "aisles": [
+        "ai1-1",
+        "ai1-2"
+      ],
+      "coords": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "capacity": 1,
+      "edgeType": "Shelf",
       "occupants": []
     },
     {
+      "id": "edge2",
       "aisles": [
-        "a2",
-        "a3"
+        "ai1"
       ],
       "capacity": 5,
       "coords": [
-        0,
-        3
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ]
       ],
-      "location": "lc2",
-      "occupants": []
-    },
-    {
-      "aisles": [
-        "a3",
-        "a4"
-      ],
-      "capacity": 5,
-      "coords": [
-        3,
-        3
-      ],
-      "location": "lc3",
-      "occupants": []
-    },
-    {
-      "aisles": [
-        "a4",
-        "a5"
-      ],
-      "capacity": 5,
-      "coords": [
-        3,
-        0
-      ],
-      "location": "lc4",
-      "occupants": []
+      "edgeType": "NORMAL",
+      "occupants": [
+        "robot1"
+      ]
     }
   ]
 }

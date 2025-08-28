@@ -4,5 +4,5 @@ pub struct Battery {
     pub per_meter: f32,
     pub per_pick: f32,
     pub per_turn: f32,
-    pub per_minute: f32
+    pub per_minute: f32,
 }

@@ -1,15 +1,16 @@
 use std::rc::Rc;
 
-use crate::model::{corner::Corner, location::Location, robot::Robot};
+use crate::model::{edge::Edge, location::Location, robot::Robot};
 
 pub struct Aisle {
-    id: u16,
+    id: String,
     capacity: u8,
     occupants: Vec<Rc<Robot>>,
     coords: [[u8; 2]; 2],
-    from: Rc<Corner>,
-    to: Rc<Corner>,
-    distance: f32
+    from: Rc<Edge>,
+    to: Rc<Edge>,
+    parent_aisle: Option<Rc<Aisle>>,
+    distance: f32,
 }
 
 impl Location for Aisle {
@@ -17,7 +18,7 @@ impl Location for Aisle {
         &self.coords
     }
 
-    fn get_id(&self) -> &u16 {
+    fn get_id(&self) -> &str {
         &self.id
     }
 }
